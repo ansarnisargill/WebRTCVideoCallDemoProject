@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DHA Video Conference Chatroom</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="../easyrtc/easyrtc.css" />
+    <link rel="stylesheet" type="text/css" href="css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../easyrtc/easyrtc.js"></script>
+    <script type="text/javascript" src="js/ScreenResizeFunctions.js"></script>
+
+    <script type="text/javascript" src="js/site.js"></script>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/DateFormator.js"></script>
+
+
+
+</head>
+
+<body onload="appInit()" style="background-image:url(irongrip.png);">
+
+    <div class="w3-bar w3-black">
+        <span class="w3-bar-item w3-mobile w3-green">Secure Chat</span>
+        <span class="w3-bar-item w3-mobile w3-center" id="roomName"></span>
+        <a href="/" title="Logout" class="w3-bar-item w3-right">
+            <i class="material-icons w3-text-white w3-hover-text-green">
+                exit_to_app
+            </i>
+        </a>
+        <button id="clearTextbtn" title="Clear Messages" style="display:none;" class="w3-bar-item w3-right w3-black"
+            onclick="ClearText()">
+            <i class="material-icons w3-text-white w3-hover-text-pink ">delete_sweep</i>
+        </button>
+     
+
+
+    </div>
+
+    <div id="container">
+        <div id="left">
+            <video id="box0" muted="muted" volume="0" autoplay="autoplay" playsinline="playsinline"
+                style="visibility: visible;" class="videoElement"></video>
+            <video id="box1" class="videoElement" autoplay="autoplay" playsinline="playsinline" controls></video>
+            <video id="box2" class="videoElement" autoplay="autoplay" playsinline="playsinline" controls></video>
+            <video id="box3" class="videoElement" autoplay="autoplay" playsinline="playsinline" controls></video>
+
+
+            <div class="MessagePane" id="MessagePane">
+                <ul id="MessageList">
+                </ul>
+            </div>
+        </div>
+        <div id="right">
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+
+
+    <div id="InputPane" style="z-index: 4;position: fixed;right: 0px;bottom: 0px; width: 100%;">
+        <input type="text" list=datalist id="textentryField" placeholder="Type a message..."
+            onkeypress="SendSmsOnEnter(event)" /><br>
+        <button id="textentrySubmit" onclick="sendText()">
+            <i class="material-icons w3-text-white w3-hover-text-green w3-xxlarge">
+                send
+            </i>
+        </button>
+        <datalist id="datalist">
+        </datalist>
+    </div>
+
+
+
+
+
+    <!-- The Modal -->
+    <div id="id01" class="w3-modal" style="z-index: 100;">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                <div class="w3-container w3-margin">
+                    <h2>Presentation Files</h2>
+
+                    <table id="modalTable" class="w3-table-all w3-hoverable">
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

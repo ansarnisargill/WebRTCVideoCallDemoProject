@@ -1,0 +1,125 @@
+.transit {
+    transition: left 1s, top 1s, right 1s, bottom 1s, width 1s, height 1s, transform 1s;
+    -moz-transition: left 1s, top 1s, right 1s, bottom 1s, width 1s, height 1s, -moz-transform 1s;
+    -webkit-transition: left 1s, top 1s, right 1s, bottom 1s, width 1s, height 1s, -webkit-transform 1s;
+    -o-transition: left 1s, top 1s, right 1s, bottom 1s, width 1s, height 1s, -o-transform 1s;
+}
+
+.hidden {
+    background-color: transparent;
+    border: solid 2px blue;
+}
+
+.boxCommon {
+    position: absolute;
+}
+
+.closeButton {
+    display: none;
+    /* hide the easyApp's close button because we have our own */
+}
+
+.thumbCommon {
+    z-index: 2;
+    box-shadow: 5px 5px 5px #000000;
+}
+
+#controlArea {
+    background-color: #ff8000;
+}
+
+body {
+    background-color: #ffd0d0;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+#killButton {
+    opacity: 0.7;
+}
+
+#killButton:hover {
+    opacity: 1.0;
+}
+
+#muteButton {
+    opacity: 0.7;
+}
+
+#muteButton:hover {
+    opacity: 1.0;
+}
+
+#textentryBox {
+    border: 2px solid #a0ffa0;
+    border-radius: 10px;
+    z-index: 5;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #000000;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#textentryField {
+    width: 100%;
+    z-index: 5;
+    height: 70px;
+    font-size: x-large;
+    padding-left: 30px;
+    padding-right: 50px;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+#textentrySubmit {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+#textentryCancel {
+    font-size: larger;
+}
+.MessagePane {
+    height: 100%;
+    width:485px;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+ display: none; 
+}
+
+::placeholder {
+    color: #bfbfbf;
+    opacity: 1;
+}
+
+.w3-bar {
+    height: 34px;
+}
+
+.videoElement {
+    visibility: hidden;
+    width: 250px;
+    margin:2px;
+}
+
+#left {
+    width: 520px;
+    float: left;
+}
+
+#right {
+    margin-left: 200px;
+    /* Change this to whatever the width of your left column is*/
+}
+
+.clear {
+    clear: both;
+}
+.pdfcontrol{
+    visibility:hidden;
+}
