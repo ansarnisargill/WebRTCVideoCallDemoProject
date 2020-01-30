@@ -37,11 +37,6 @@ var socketServer = socketIo.listen(webServer, { "log level": 1 });
 var myIceServers = [
     { urls: "stun:stun.l.google.com:19302" },
     {
-        urls: 'turn:numb.viagenie.ca',
-        credential: '4j8z26irNFNkYf4',
-        username: 'ansarnisargill@gmail.com'
-    },
-    {
         urls: 'turn:192.158.29.39:3478?transport=udp',
         credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
         username: '28224511:1379330808'
